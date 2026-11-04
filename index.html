@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SEO & pratinjau tautan. Inilah keuntungan utama pindah ke GitHub Pages:
+     mesin pencari dan WhatsApp bisa membaca bagian ini, sesuatu yang tidak
+     mungkin saat halaman dilayani dari script.google.com. -->
+<title>Etalase Produk Digital &amp; Kelas</title>
+<meta name="description" content="Produk digital dan kelas praktis untuk mempercepat karier dan portofolio Anda.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Etalase Produk Digital &amp; Kelas">
+<meta property="og:description" content="Produk digital dan kelas praktis untuk mempercepat karier dan portofolio Anda.">
+<meta property="og:image" content="https://ganti-dengan-url-gambar-anda.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+<link rel="stylesheet" href="css/style.css">
+
+<!-- tema.js WAJIB sebelum Tailwind: tailwind.config membaca window.TEMA_COLORS -->
+<script src="js/tema.js"></script>
+
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: { extend: {
+    colors: window.TEMA_COLORS,
+    borderRadius: { DEFAULT:'0.5rem', lg:'0.75rem', xl:'1rem', '2xl':'1.5rem', full:'9999px' },
+    fontFamily: { head:['Plus Jakarta Sans','sans-serif'], body:['Inter','sans-serif'] },
+    maxWidth: { konten:'1280px' }
+  }}
+};
+</script>
+
+</head>
+
+<body class="bg-background text-on-surface antialiased">
+
+<!-- ============ NAVBAR ============ -->
+<header class="fixed top-0 inset-x-0 z-50 bg-background/90 backdrop-blur-xl border-b border-outline-variant/60">
+  <div class="h-[72px] max-w-konten mx-auto px-6 flex items-center justify-between gap-4">
+    <a href="#" class="flex items-center gap-3 shrink-0">
+      <img id="logo" alt="" class="h-8 w-auto object-contain" hidden>
+      <span id="namaBrand" class="font-head text-xl font-bold">&nbsp;</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-1">
+      <a href="#produk"    class="px-4 py-2 rounded-full text-sm font-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition">Produk</a>
+      <a href="#kelas"     class="px-4 py-2 rounded-full text-sm font-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition">Kelas</a>
+      <a href="#hasil"     class="px-4 py-2 rounded-full text-sm font-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition">Hasil</a>
+      <a href="#testimoni" class="px-4 py-2 rounded-full text-sm font-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition">Testimoni</a>
+    </nav>
+    <div class="flex items-center gap-2 shrink-0">
+      <a id="ctaNav" href="#" target="_blank" rel="noopener"
+         class="hidden sm:inline-flex pil pil-utama !px-5 !py-2.5 !text-sm">Hubungi Admin</a>
+      <button onclick="bukaMenu()" aria-label="Menu"
+        class="lg:hidden w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Laci menu mobile -->
+<div id="laci" hidden class="fixed inset-0 z-[60] lg:hidden">
+  <div class="absolute inset-0 bg-on-surface/50" onclick="tutupMenu()"></div>
+  <nav class="absolute inset-y-0 right-0 w-[82%] max-w-sm bg-surface-container-low p-6 flex flex-col">
+    <button onclick="tutupMenu()" aria-label="Tutup" class="self-end w-10 h-10 rounded-full hover:bg-surface-container">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="mt-6 flex flex-col gap-1">
+      <a href="#produk"    onclick="tutupMenu()" class="py-3 text-xl font-head font-bold">Produk</a>
+      <a href="#kelas"     onclick="tutupMenu()" class="py-3 text-xl font-head font-bold">Kelas</a>
+      <a href="#hasil"     onclick="tutupMenu()" class="py-3 text-xl font-head font-bold">Hasil</a>
+      <a href="#testimoni" onclick="tutupMenu()" class="py-3 text-xl font-head font-bold">Testimoni</a>
+    </div>
+    <a id="ctaLaci" href="#" target="_blank" rel="noopener" class="pil pil-utama justify-center mt-auto">Hubungi Admin</a>
+  </nav>
+</div>
+
+<main class="pt-[72px]">
+
+<!-- ============ HERO ============ -->
+<section class="relative bg-secondary-fixed overflow-hidden">
+  <div class="max-w-konten mx-auto px-6 py-16 lg:py-24 grid lg:grid-cols-12 gap-12 items-center relative z-10">
+    <div class="lg:col-span-7">
+      <div id="heroTeks" class="space-y-6">
+        <div class="skeleton h-4 w-48 rounded-full"></div>
+        <div class="skeleton h-14 w-full rounded-2xl"></div>
+        <div class="skeleton h-20 w-5/6 rounded-2xl"></div>
+      </div>
+      <div id="heroDot" class="flex items-center gap-2 mt-10"></div>
+    </div>
+    <div class="lg:col-span-5">
+      <div id="heroGambar" class="skeleton aspect-[4/3] rounded-[2rem]"></div>
+    </div>
+  </div>
+  <svg class="gelombang" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,56 C360,0 1080,0 1440,56 L1440,56 L0,56 Z" fill="rgb(var(--bg-base))"/>
+  </svg>
+</section>
+
+<!-- ============ ETALASE PRODUK ============ -->
+<section id="produk" class="py-20 lg:py-28">
+  <div class="max-w-konten mx-auto px-6">
+    <p class="text-center text-xs font-head font-bold tracking-[0.08em] uppercase text-primary">Produk Digital</p>
+    <h2 class="text-center text-3xl lg:text-4xl font-bold mt-3">Pilihan Produk Siap Pakai</h2>
+    <p class="text-center text-on-surface-variant mt-3 max-w-xl mx-auto">
+      Template, kit, dan panduan praktis yang bisa langsung dipakai hari ini.
+    </p>
+    <div id="gridProduk" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12"></div>
+  </div>
+</section>
+
+<!-- ============ KELAS & KURIKULUM ============ -->
+<section id="kelas" class="bg-surface-container-low">
+  <svg class="gelombang rotate-180" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,56 C360,0 1080,0 1440,56 L1440,56 L0,56 Z" fill="rgb(var(--bg-base))"/>
+  </svg>
+  <div class="max-w-konten mx-auto px-6 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+    <div>
+      <p class="text-xs font-head font-bold tracking-[0.08em] uppercase text-primary">Kelas Intensif</p>
+      <h2 id="namaKelas" class="text-3xl lg:text-4xl font-bold mt-3">&nbsp;</h2>
+      <p id="descKelas" class="text-on-surface-variant mt-4 leading-relaxed"></p>
+      <div id="chipKelas" class="flex flex-wrap gap-2 mt-6"></div>
+      <div id="videoBungkus" class="mt-8 rounded-2xl overflow-hidden border-4 border-surface-container-lowest shadow-lg"></div>
+    </div>
+    <div>
+      <p class="text-xs font-head font-bold tracking-[0.08em] uppercase text-primary mb-5">Kurikulum</p>
+      <div id="akordeon" class="space-y-3"></div>
+    </div>
+  </div>
+  <svg class="gelombang" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,56 C360,0 1080,0 1440,56 L1440,56 L0,56 Z" fill="rgb(var(--bg-base))"/>
+  </svg>
+</section>
+
+<!-- ============ HASIL KELAS ============ -->
+<section id="hasil" class="py-20 lg:py-28">
+  <div class="max-w-konten mx-auto px-6">
+    <p class="text-center text-xs font-head font-bold tracking-[0.08em] uppercase text-primary">Bukti Hasil Member</p>
+    <h2 class="text-center text-3xl lg:text-4xl font-bold mt-3">Karya Nyata Alumni</h2>
+    <div id="gridHasil" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12"></div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONI ============ -->
+<section id="testimoni" class="bg-secondary-fixed">
+  <svg class="gelombang rotate-180" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,56 C360,0 1080,0 1440,56 L1440,56 L0,56 Z" fill="rgb(var(--bg-base))"/>
+  </svg>
+  <div class="max-w-konten mx-auto px-6 py-16 lg:py-20">
+    <h2 class="text-center text-3xl lg:text-4xl font-bold">Kata Member Kami</h2>
+    <div id="gridTesti" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12"></div>
+  </div>
+  <svg class="gelombang" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,56 C360,0 1080,0 1440,56 L1440,56 L0,56 Z" fill="rgb(var(--ink-deep))"/>
+  </svg>
+</section>
+
+<!-- ============ CTA PENUTUP + FOOTER ============ -->
+<footer class="bg-inverse-surface text-inverse-on-surface">
+  <div class="max-w-konten mx-auto px-6 py-16 lg:py-20 text-center">
+    <h2 class="text-3xl lg:text-4xl font-bold">Siap Mulai Hari Ini?</h2>
+    <p class="text-inverse-on-surface/70 mt-3">Pilih produk yang paling sesuai, atau tanya dulu ke admin.</p>
+    <div class="flex flex-wrap justify-center gap-4 mt-8">
+      <a href="#produk" class="pil !bg-secondary-fixed !text-on-secondary-fixed !px-8 !py-3.5">Lihat Produk</a>
+      <a id="ctaFooter" href="#" target="_blank" rel="noopener"
+         class="pil !border-2 !border-inverse-on-surface/40 !text-inverse-on-surface !px-8 !py-3">Chat WhatsApp</a>
+    </div>
+  </div>
+  <div class="border-t border-inverse-on-surface/15">
+    <p id="hakCipta" class="max-w-konten mx-auto px-6 py-6 text-center text-sm text-inverse-on-surface/60"></p>
+  </div>
+</footer>
+
+</main>
+
+<!-- ============ TOMBOL WA MENGAMBANG ============ -->
+<a id="waApung" href="#" target="_blank" rel="noopener" aria-label="Chat admin"
+   class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-tertiary text-on-tertiary
+          flex items-center justify-center shadow-lg hover:scale-105 transition">
+  <span class="material-symbols-outlined">chat</span>
+</a>
+
+<!-- ============ MODAL CHECKOUT ============ -->
+<div id="modal" hidden class="fixed inset-0 z-[70] flex items-center justify-center p-4">
+  <div class="absolute inset-0 bg-on-surface/55 backdrop-blur-sm" onclick="tutupCheckout()"></div>
+  <div class="relative w-full max-w-[480px] max-h-[92vh] overflow-y-auto bg-surface-container-lowest rounded-[1.5rem] p-6 sm:p-7 shadow-2xl">
+
+    <div id="formTahap">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h3 class="text-xl font-bold">Lengkapi Data Pembelian</h3>
+          <p class="text-sm text-on-surface-variant mt-1">Data ini kami pakai untuk mengirim akses produk.</p>
+        </div>
+        <button onclick="tutupCheckout()" aria-label="Tutup"
+          class="w-9 h-9 rounded-full flex items-center justify-center hover:bg-surface-container shrink-0">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <div class="flex items-center gap-3 mt-5 p-3 bg-surface-container-low rounded-2xl">
+        <img id="mProdukGambar" alt="" class="w-14 h-14 rounded-xl object-cover bg-surface-container">
+        <div class="min-w-0">
+          <p id="mProdukNama" class="font-semibold text-sm truncate"></p>
+          <p id="mProdukHarga" class="text-primary font-bold"></p>
+        </div>
+      </div>
+
+      <form id="formLeads" class="mt-5 space-y-4" novalidate>
+        <div>
+          <label for="fNama" class="block text-sm font-semibold mb-1.5">Nama Lengkap <span class="text-error">*</span></label>
+          <input id="fNama" name="nama" type="text" autocomplete="name"
+            class="w-full h-11 px-4 rounded-xl border border-outline-variant focus:border-primary outline-none">
+          <p class="galat text-sm text-error mt-1" hidden></p>
+        </div>
+        <div>
+          <label for="fProfesi" class="block text-sm font-semibold mb-1.5">Profesi <span class="text-error">*</span></label>
+          <input id="fProfesi" name="profesi" type="text"
+            class="w-full h-11 px-4 rounded-xl border border-outline-variant focus:border-primary outline-none">
+          <p class="galat text-sm text-error mt-1" hidden></p>
+        </div>
+        <div>
+          <label for="fWa" class="block text-sm font-semibold mb-1.5">No. WhatsApp <span class="text-error">*</span></label>
+          <input id="fWa" name="no_wa" type="tel" inputmode="numeric" placeholder="08123456789"
+            class="w-full h-11 px-4 rounded-xl border border-outline-variant focus:border-primary outline-none">
+          <p class="text-xs text-on-surface-variant mt-1">Contoh: 08123456789 — otomatis diubah ke format 62.</p>
+          <p class="galat text-sm text-error mt-1" hidden></p>
+        </div>
+        <div>
+          <label for="fEmail" class="block text-sm font-semibold mb-1.5">Email <span class="text-error">*</span></label>
+          <input id="fEmail" name="email" type="email" autocomplete="email"
+            class="w-full h-11 px-4 rounded-xl border border-outline-variant focus:border-primary outline-none">
+          <p class="galat text-sm text-error mt-1" hidden></p>
+        </div>
+
+        <!-- Kolom jebakan: tersembunyi dari manusia, diisi oleh bot -->
+        <input id="fJebakan" name="jebakan" type="text" tabindex="-1" autocomplete="off"
+          aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0">
+
+        <button id="btnKirim" type="submit" class="pil pil-utama w-full justify-center !py-3.5 mt-2">
+          <span id="btnLabel">Lanjut ke Pembayaran</span>
+        </button>
+        <button type="button" onclick="tutupCheckout()"
+          class="block w-full text-center text-sm text-on-surface-variant hover:text-on-surface py-1">Batal</button>
+      </form>
+    </div>
+
+    <div id="suksesTahap" hidden class="text-center py-6">
+      <div class="w-16 h-16 rounded-full bg-tertiary-fixed text-tertiary mx-auto flex items-center justify-center">
+        <span class="material-symbols-outlined text-[32px]">check</span>
+      </div>
+      <h3 class="text-xl font-bold mt-4">Data tersimpan!</h3>
+      <p class="text-on-surface-variant text-sm mt-1">Mengarahkan ke halaman pembayaran…</p>
+      <div class="h-1 bg-surface-container rounded-full mt-6 overflow-hidden">
+        <div id="barSukses" class="h-full bg-tertiary w-0 transition-all duration-[1600ms]"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TOAST ============ -->
+<div id="toastArea" class="fixed top-5 right-5 z-[80] flex flex-col gap-2 pointer-events-none"></div>
+
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

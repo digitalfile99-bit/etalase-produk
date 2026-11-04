@@ -1,0 +1,49 @@
+/* style.css — token warna dasar + gaya landing page */
+
+  :root{
+    --bg-base:253 252 255;  --surface:245 243 251;  --surface-2:238 234 249;
+    --surface-3:230 224 245; --brand:207 198 238;   --brand-strong:168 150 219;
+    --brand-soft:231 226 247; --action:108 79 199;  --action-hover:87 60 168;
+    --accent:42 157 143;     --accent-soft:214 240 237;
+    --ink:46 37 82;          --ink-muted:107 100 128; --ink-deep:50 41 87;
+    --on-ink:245 243 251;    --on-ink-muted:202 193 233;
+    --border:226 220 242;    --danger:186 26 26;    --danger-soft:255 218 214;
+  }
+  html,body{background:rgb(var(--bg-base));color:rgb(var(--ink));}
+  .tema-transisi,.tema-transisi *{transition:background-color .35s ease,border-color .35s ease,color .35s ease;}
+
+
+  html { scroll-behavior:smooth; }
+  body { font-family:Inter,sans-serif; }
+  h1,h2,h3,.font-head { font-family:'Plus Jakarta Sans',sans-serif; letter-spacing:-0.02em; }
+  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'opsz' 24; }
+
+  /* Rangka muat (skeleton) */
+  .skeleton { background:rgb(var(--surface-2)); position:relative; overflow:hidden; }
+  .skeleton::after { content:''; position:absolute; inset:0; transform:translateX(-100%);
+    background:linear-gradient(90deg,transparent,rgb(var(--brand)/.45),transparent);
+    animation:kilau 1.4s infinite; }
+  @keyframes kilau { 100% { transform:translateX(100%); } }
+
+  /* Kartu */
+  .kartu { background:#fff; border:1px solid rgb(var(--border)); border-radius:1.5rem;
+    box-shadow:0 4px 20px -2px rgb(var(--ink)/.05); transition:transform .25s,box-shadow .25s; }
+  .kartu:hover { transform:translateY(-4px); box-shadow:0 16px 32px -4px rgb(var(--ink)/.09); }
+
+  /* Tombol pil */
+  .pil { border-radius:9999px; font-family:'Plus Jakarta Sans',sans-serif; font-weight:600;
+    font-size:15px; display:inline-flex; align-items:center; gap:.5rem; transition:all .2s; }
+  .pil-utama { background:rgb(var(--action)); color:#fff; padding:.875rem 2rem; }
+  .pil-utama:hover { background:rgb(var(--action-hover)); transform:translateY(-1px); }
+  .pil-garis { border:2px solid rgb(var(--ink)); color:rgb(var(--ink)); padding:.75rem 1.75rem; }
+  .pil-garis:hover { background:rgb(var(--ink)); color:#fff; }
+
+  /* Kolom teks terpotong */
+  .klem-2 { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+
+  /* Fokus keyboard */
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible
+    { outline:none; box-shadow:0 0 0 3px rgb(var(--action)/.35); border-radius:.5rem; }
+
+  .gelombang { display:block; width:100%; height:56px; }
+  [hidden] { display:none !important; }
